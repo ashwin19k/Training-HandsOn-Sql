@@ -1,0 +1,1120 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf500
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 DATABASE CREATION - \
+\
+mysql> create database ProblemSet05;\
+Database created\
+\
+mysql> use ProblemSet05;\
+Database changed\
+\
+TABLE CREATION - \
+\
+mysql> create table musician (m_no integer,m_name varchar(30),born date,died date,born_in integer,living_in integer);\
+Query OK, 0 rows affected (0.03 sec)\
+\
+mysql> insert into musician values (1,'Fred Bloggs','1948-01-02',null,1,2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (2,'John Smith','1950-03-03',null,3,4);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into musician values (3,'Helen Smyth','1948-08-08',null,4,5);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (4,'Harriet Smithson','1909-05-09','1980-09-20',5,6);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (5,'James First','1965-06-10',null,7,7);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (6,'Theo Mengel','1948-08-12',null,7,1);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (7,'Sue Little','1945-02-21',null,8,9);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (8,'Harry Forte','1951-02-28',null,1,8);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (9,'Phil Hot','1942-06-30',null,2,7);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (10,'Jeff Dawn','1945-12-12',null,3,6);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (11,'Rose Spring','1948-05-25',null,4,5);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into musician values (12,'Davis Heavan','1975-10-03',null,5,4);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (13,'Lovely Time','1948-12-28',null,6,3);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (14,'Alan Fluff','1935-01-15','1997-05-15',7,2);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into musician values (15,'Tony Smythe','1932-04-02',null,8,1);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (16,'James Quick','1924-08-08',null,9,2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (17,'Freda Miles','1920-07-04',null,9,3);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into musician values (18,'Elsie James','1947-07-06',null,8,5);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into musician values (19,'Andy Jones','1958-10-08',null,7,6);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (20,'Louise Simpson','1948-01-10','1998-02-11',6,6);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (21,'James Steeple','1947-01-10',null,5,6);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into musician values (22,'Steve Chaytors','1956-03-11',null,6,7);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> select * from musician;\
++------+------------------+------------+------------+---------+-----------+\
+| m_no | m_name           | born       | died       | born_in | living_in |\
++------+------------------+------------+------------+---------+-----------+\
+|    1 | Fred Bloggs      | 1948-01-02 | NULL       |       1 |         2 |\
+|    2 | John Smith       | 1950-03-03 | NULL       |       3 |         4 |\
+|    3 | Helen Smyth      | 1948-08-08 | NULL       |       4 |         5 |\
+|    4 | Harriet Smithson | 1909-05-09 | 1980-09-20 |       5 |         6 |\
+|    5 | James First      | 1965-06-10 | NULL       |       7 |         7 |\
+|    6 | Theo Mengel      | 1948-08-12 | NULL       |       7 |         1 |\
+|    7 | Sue Little       | 1945-02-21 | NULL       |       8 |         9 |\
+|    8 | Harry Forte      | 1951-02-28 | NULL       |       1 |         8 |\
+|    9 | Phil Hot         | 1942-06-30 | NULL       |       2 |         7 |\
+|   10 | Jeff Dawn        | 1945-12-12 | NULL       |       3 |         6 |\
+|   11 | Rose Spring      | 1948-05-25 | NULL       |       4 |         5 |\
+|   12 | Davis Heavan     | 1975-10-03 | NULL       |       5 |         4 |\
+|   13 | Lovely Time      | 1948-12-28 | NULL       |       6 |         3 |\
+|   14 | Alan Fluff       | 1935-01-15 | 1997-05-15 |       7 |         2 |\
+|   15 | Tony Smythe      | 1932-04-02 | NULL       |       8 |         1 |\
+|   16 | James Quick      | 1924-08-08 | NULL       |       9 |         2 |\
+|   17 | Freda Miles      | 1920-07-04 | NULL       |       9 |         3 |\
+|   18 | Elsie James      | 1947-07-06 | NULL       |       8 |         5 |\
+|   19 | Andy Jones       | 1958-10-08 | NULL       |       7 |         6 |\
+|   20 | Louise Simpson   | 1948-01-10 | 1998-02-11 |       6 |         6 |\
+|   21 | James Steeple    | 1947-01-10 | NULL       |       5 |         6 |\
+|   22 | Steve Chaytors   | 1956-03-11 | NULL       |       6 |         7 |\
++------+------------------+------------+------------+---------+-----------+\
+22 rows in set (0.00 sec)\
+\
+mysql> create table place (place_no integer,place_town varchar(20), place_country varchar(20));\
+Query OK, 0 rows affected (0.01 sec)\
+\
+mysql> insert into place values (1,'Manchester','England');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into place values (2,'Edinburgh','Scotland');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into place values (3,'Salzburg','Austria');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into place values (4,'New York','USA');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into place values (5,'Birmingham','England');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into place values (6,'Glasgow','Scotland');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into place values (7,'London','England');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into place values (8,'Chicago','USA');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into place values (9,'Amsterdam','Netherlands');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> select * from place;\
++----------+------------+---------------+\
+| place_no | place_town | place_country |\
++----------+------------+---------------+\
+|        1 | Manchester | England       |\
+|        2 | Edinburgh  | Scotland      |\
+|        3 | Salzburg   | Austria       |\
+|        4 | New York   | USA           |\
+|        5 | Birmingham | England       |\
+|        6 | Glasgow    | Scotland      |\
+|        7 | London     | England       |\
+|        8 | Chicago    | USA           |\
+|        9 | Amsterdam  | Netherlands   |\
++----------+------------+---------------+\
+9 rows in set (0.00 sec)\
+\
+mysql> create table performer (perf_no integer,perf_is integer,instrument varchar(10),perf_type varchar(15));\
+Query OK, 0 rows affected (0.01 sec)\
+\
+mysql> insert into performer values (1,2,'violin','classical');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (2,4,'viola','classical');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (3,6,'banjo','jazz');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (4,8,'violin','classical');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (5,12,'guitar','jazz');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (6,14,'violin','classical');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (7,16,'bass','jazz');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (8,18,'viola','classical');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (9,20,'bass','jazz');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (10,2,'flute','jazz');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (11,20,'cornet','jazz');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (12,6,'violin','jazz');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (13,8,'drums','jazz');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (14,10,'viola','classical');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (15,12,'cello','classical');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (16,14,'viola','classical');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (17,16,'flute','jazz');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (18,18,'guitar','not known');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (19,20,'trombone','jazz');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (20,3,'horn','jazz');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (21,5,'violin','jazz');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (22,7,'cello','classical');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (23,2,'bass','jazz');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (24,4,'violin','jazz');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (25,6,'drums','classical');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (26,8,'clarinet','jazz');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performer values (27,10,'bass','jazz');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (28,12,'viola','classical');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performer values (29,18,'cello','classical');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> select * from performer;\
++---------+---------+------------+-----------+\
+| perf_no | perf_is | instrument | perf_type |\
++---------+---------+------------+-----------+\
+|       1 |       2 | violin     | classical |\
+|       2 |       4 | viola      | classical |\
+|       3 |       6 | banjo      | jazz      |\
+|       4 |       8 | violin     | classical |\
+|       5 |      12 | guitar     | jazz      |\
+|       6 |      14 | violin     | classical |\
+|       7 |      16 | bass       | jazz      |\
+|       8 |      18 | viola      | classical |\
+|       9 |      20 | bass       | jazz      |\
+|      10 |       2 | flute      | jazz      |\
+|      11 |      20 | cornet     | jazz      |\
+|      12 |       6 | violin     | jazz      |\
+|      13 |       8 | drums      | jazz      |\
+|      14 |      10 | viola      | classical |\
+|      15 |      12 | cello      | classical |\
+|      16 |      14 | viola      | classical |\
+|      17 |      16 | flute      | jazz      |\
+|      18 |      18 | guitar     | not known |\
+|      19 |      20 | trombone   | jazz      |\
+|      20 |       3 | horn       | jazz      |\
+|      21 |       5 | violin     | jazz      |\
+|      22 |       7 | cello      | classical |\
+|      23 |       2 | bass       | jazz      |\
+|      24 |       4 | violin     | jazz      |\
+|      25 |       6 | drums      | classical |\
+|      26 |       8 | clarinet   | jazz      |\
+|      27 |      10 | bass       | jazz      |\
+|      28 |      12 | viola      | classical |\
+|      29 |      18 | cello      | classical |\
++---------+---------+------------+-----------+\
+29 rows in set (0.00 sec)\
+\
+mysql> create table composer (comp_no integer, comp_is integer, comp_type varchar(10));\
+Query OK, 0 rows affected (0.01 sec)\
+\
+mysql> insert into composer values (1,1,'jazz');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into composer values (2,3,'classical');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composer values (3,5,'jazz');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composer values (4,7,'classical');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into composer values (5,9,'jazz');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composer values (6,11,'rock');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composer values (7,13,'classical');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composer values (8,15,'jazz');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composer values (9,17,'classical');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composer values (10,19,'jazz');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composer values (11,10,'rock');\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composer values (12,8,'jazz');\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> select * from composer;\
++---------+---------+-----------+\
+| comp_no | comp_is | comp_type |\
++---------+---------+-----------+\
+|       1 |       1 | jazz      |\
+|       2 |       3 | classical |\
+|       3 |       5 | jazz      |\
+|       4 |       7 | classical |\
+|       5 |       9 | jazz      |\
+|       6 |      11 | rock      |\
+|       7 |      13 | classical |\
+|       8 |      15 | jazz      |\
+|       9 |      17 | classical |\
+|      10 |      19 | jazz      |\
+|      11 |      10 | rock      |\
+|      12 |       8 | jazz      |\
++---------+---------+-----------+\
+12 rows in set (0.00 sec)\
+\
+mysql> create table band (band_no integer,band_name varchar(20),band_home integer,band_type varchar(15),b_date date,band_contact integer);\
+Query OK, 0 rows affected (0.02 sec)\
+\
+mysql> insert into band values (1,'ROP',5,'classical','2001-01-30',11);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into band values (2,'AASO',6,'classical',null,10);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into band values (3,'The J Bs',8,'jazz',null,12);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into band values (4,'BBSO',9,'classical',null,21);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into band values (5,'The left Overs',2,'jazz',null,8);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into band values (6,'Somebody Loves this',1,'jazz',null,6);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into band values (7,'Oh well',4,'classical',null,3);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into band values (8,'Swinging strings',4,'classical',null,7);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into band values (9,'The Rest',9,'jazz',null,16);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> select * from band;\
++---------+---------------------+-----------+-----------+------------+--------------+\
+| band_no | band_name           | band_home | band_type | b_date     | band_contact |\
++---------+---------------------+-----------+-----------+------------+--------------+\
+|       1 | ROP                 |         5 | classical | 2001-01-30 |           11 |\
+|       2 | AASO                |         6 | classical | NULL       |           10 |\
+|       3 | The J Bs            |         8 | jazz      | NULL       |           12 |\
+|       4 | BBSO                |         9 | classical | NULL       |           21 |\
+|       5 | The left Overs      |         2 | jazz      | NULL       |            8 |\
+|       6 | Somebody Loves this |         1 | jazz      | NULL       |            6 |\
+|       7 | Oh well             |         4 | classical | NULL       |            3 |\
+|       8 | Swinging strings    |         4 | classical | NULL       |            7 |\
+|       9 | The Rest            |         9 | jazz      | NULL       |           16 |\
++---------+---------------------+-----------+-----------+------------+--------------+\
+9 rows in set (0.00 sec)\
+\
+mysql> create table plays_in (player integer,band_id integer);\
+Query OK, 0 rows affected (0.00 sec)\
+\
+mysql> insert into plays_in values (1,1);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into plays_in values (1,7);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (3,1);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into plays_in values (4,1);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (4,7);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (5,1);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (6,1);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (6,7);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (7,1);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (8,1);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (8,7);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into plays_in values (10,2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (12,2);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into plays_in values (13,2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (14,2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (14,8);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (15,2);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into plays_in values (15,8);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into plays_in values (17,2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (18,2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (19,3);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (20,3);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (21,4);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into plays_in values (22,4);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (23,4);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (25,5);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (26,6);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into plays_in values (27,6);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (28,7);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into plays_in values (28,8);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into plays_in values (29,7);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> select * from plays_in ;\
++--------+---------+\
+| player | band_id |\
++--------+---------+\
+|      1 |       1 |\
+|      1 |       7 |\
+|      3 |       1 |\
+|      4 |       1 |\
+|      4 |       7 |\
+|      5 |       1 |\
+|      6 |       1 |\
+|      6 |       7 |\
+|      7 |       1 |\
+|      8 |       1 |\
+|      8 |       7 |\
+|     10 |       2 |\
+|     12 |       2 |\
+|     13 |       2 |\
+|     14 |       2 |\
+|     14 |       8 |\
+|     15 |       2 |\
+|     15 |       8 |\
+|     17 |       2 |\
+|     18 |       2 |\
+|     19 |       3 |\
+|     20 |       3 |\
+|     21 |       4 |\
+|     22 |       4 |\
+|     23 |       4 |\
+|     25 |       5 |\
+|     26 |       6 |\
+|     27 |       6 |\
+|     28 |       7 |\
+|     28 |       8 |\
+|     29 |       7 |\
++--------+---------+\
+31 rows in set (0.00 sec)\
+\
+mysql> create table has_composed (cmpr_no integer,cmpn_no integer);\
+Query OK, 0 rows affected (0.01 sec)\
+\
+mysql> insert into has_composed values (1,1);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (1,8);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (2,11);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (3,2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (3,13);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (3,14);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (3,18);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into has_composed values (4,12);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (4,20);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (5,3);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (5,13);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (5,14);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (6,15);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (6,21);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (7,4);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (7,9);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (8,16);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (9,5);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into has_composed values (9,10);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (10,17);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (11,6);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (12,7);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into has_composed values (12,19);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> select * from has_composed;\
++---------+---------+\
+| cmpr_no | cmpn_no |\
++---------+---------+\
+|       1 |       1 |\
+|       1 |       8 |\
+|       2 |      11 |\
+|       3 |       2 |\
+|       3 |      13 |\
+|       3 |      14 |\
+|       3 |      18 |\
+|       4 |      12 |\
+|       4 |      20 |\
+|       5 |       3 |\
+|       5 |      13 |\
+|       5 |      14 |\
+|       6 |      15 |\
+|       6 |      21 |\
+|       7 |       4 |\
+|       7 |       9 |\
+|       8 |      16 |\
+|       9 |       5 |\
+|       9 |      10 |\
+|      10 |      17 |\
+|      11 |       6 |\
+|      12 |       7 |\
+|      12 |      19 |\
++---------+---------+\
+23 rows in set (0.00 sec)\
+\
+mysql> create table performance (pfrmnc_no integer,gave integer,performed integer,conducted_by integer, performed_in integer);\
+Query OK, 0 rows affected (0.01 sec)\
+\
+mysql> insert into performance values(1,1,1,21,1);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(2,1,3,21,1);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performance values(3,1,5,21,1);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performance values(4,1,2,1,2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(5,2,4,21,2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(6,2,6,21,2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(7,4,19,9,3);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performance values(8,4,20,10,3);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performance values(8,4,20,10,3);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(9,5,12,10,4);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(10,5,13,11,4);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(11,3,5,13,5);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(12,3,6,13,5);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(13,3,7,13,5);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(14,6,20,14,6);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(15,8,12,15,7);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(16,9,16,21,8);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(17,9,17,21,8);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into performance values(18,9,18,21,8);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(19,9,19,21,8);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into performance values(20,4,12,10,3);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> select * from performance;\
++-----------+------+-----------+--------------+--------------+\
+| pfrmnc_no | gave | performed | conducted_by | performed_in |\
++-----------+------+-----------+--------------+--------------+\
+|         1 |    1 |         1 |           21 |            1 |\
+|         2 |    1 |         3 |           21 |            1 |\
+|         3 |    1 |         5 |           21 |            1 |\
+|         4 |    1 |         2 |            1 |            2 |\
+|         5 |    2 |         4 |           21 |            2 |\
+|         6 |    2 |         6 |           21 |            2 |\
+|         7 |    4 |        19 |            9 |            3 |\
+|         8 |    4 |        20 |           10 |            3 |\
+|         8 |    4 |        20 |           10 |            3 |\
+|         9 |    5 |        12 |           10 |            4 |\
+|        10 |    5 |        13 |           11 |            4 |\
+|        11 |    3 |         5 |           13 |            5 |\
+|        12 |    3 |         6 |           13 |            5 |\
+|        13 |    3 |         7 |           13 |            5 |\
+|        14 |    6 |        20 |           14 |            6 |\
+|        15 |    8 |        12 |           15 |            7 |\
+|        16 |    9 |        16 |           21 |            8 |\
+|        17 |    9 |        17 |           21 |            8 |\
+|        18 |    9 |        18 |           21 |            8 |\
+|        19 |    9 |        19 |           21 |            8 |\
+|        20 |    4 |        12 |           10 |            3 |\
++-----------+------+-----------+--------------+--------------+\
+21 rows in set (0.00 sec)\
+\
+mysql> create table composition (c_no integer,comp_date date,c_title varchar(20),c_in integer);\
+Query OK, 0 rows affected (0.03 sec)\
+\
+mysql> insert into composition values (1,'1975-06-17','Optus 1',1);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into composition values (2,'1976-07-21','Here Goes',2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (3,'1981-12-14','Valiant Knight',3);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (4,'1982-01-12','Little Piece',4);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (5,'1985-03-13','Simple Song',5);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into composition values (6,'1986-04-14','Little Swing SOng',6);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into composition values (7,'1987-05-13','Fast Journey',7);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (8,'1976-02-14','Simple Love Song',8);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into composition values (9,'1982-01-21','Complex Rythms',9);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (10,'1985-02-23','Drumming Rythms',9);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (11,'1978-03-18','Fast Drumming',8);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (12,'1984-08-13','Slow Song',7);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (13,'1968-09-14','Blue Roses',6);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (14,'1983-11-15','Velvet Rain',5);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (15,'1982-05-16','Cold Wind',4);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (16,'1983-06-18','After the Wind Blows',3);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (17,null,'A Simple Piece',2); \
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (18,'1985-01-12','Long Rythms',1);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (19,'1988-02-12','Eastern Wind',1);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (20,null,'Slow Symphony Blow',2);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composition values (21,'1990-07-12','A Last Song',6);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> select * from composition;\
++------+------------+----------------------+------+\
+| c_no | comp_date  | c_title              | c_in |\
++------+------------+----------------------+------+\
+|    1 | 1975-06-17 | Optus 1              |    1 |\
+|    2 | 1976-07-21 | Here Goes            |    2 |\
+|    3 | 1981-12-14 | Valiant Knight       |    3 |\
+|    4 | 1982-01-12 | Little Piece         |    4 |\
+|    5 | 1985-03-13 | Simple Song          |    5 |\
+|    6 | 1986-04-14 | Little Swing SOng    |    6 |\
+|    7 | 1987-05-13 | Fast Journey         |    7 |\
+|    8 | 1976-02-14 | Simple Love Song     |    8 |\
+|    9 | 1982-01-21 | Complex Rythms       |    9 |\
+|   10 | 1985-02-23 | Drumming Rythms      |    9 |\
+|   11 | 1978-03-18 | Fast Drumming        |    8 |\
+|   12 | 1984-08-13 | Slow Song            |    7 |\
+|   13 | 1968-09-14 | Blue Roses           |    6 |\
+|   14 | 1983-11-15 | Velvet Rain          |    5 |\
+|   15 | 1982-05-16 | Cold Wind            |    4 |\
+|   16 | 1983-06-18 | After the Wind Blows |    3 |\
+|   17 | NULL       | A Simple Piece       |    2 |\
+|   18 | 1985-01-12 | Long Rythms          |    1 |\
+|   19 | 1988-02-12 | Eastern Wind         |    1 |\
+|   20 | NULL       | Slow Symphony Blow   |    2 |\
+|   21 | 1990-07-12 | A Last Song          |    6 |\
++------+------------+----------------------+------+\
+21 rows in set (0.00 sec)\
+\
+mysql> create table concert (concert_no integer,concert_venue varchar(25),concert_in integer,con_date date,concert_orgniser integer);\
+Query OK, 0 rows affected (0.01 sec)\
+\
+mysql> insert into concert values (1,'Bridgewater Hall',1,'1995-01-06',21);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into concert values (2,'Bridgewater Hall',1,'1996-05-08',3);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into concert values (3,'Usher Hall',2,'1995-06-03',3);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into concert values (4,'Assembly Rooms',2,'1997-09-20',21);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into concert values (5,'Festspiel Haus',3,'1995-02-21',8);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into concert values (6,'Royal Albert Hall',7,'1993-04-12',8);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into concert values (7,'Concertgebouw',9,'1993-05-14',8);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into concert values (8,'Metropolitan',4,'1997-06-15',21);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> select * from concert;\
++------------+-------------------+------------+------------+------------------+\
+| concert_no | concert_venue     | concert_in | con_date   | concert_orgniser |\
++------------+-------------------+------------+------------+------------------+\
+|          1 | Bridgewater Hall  |          1 | 1995-01-06 |               21 |\
+|          2 | Bridgewater Hall  |          1 | 1996-05-08 |                3 |\
+|          3 | Usher Hall        |          2 | 1995-06-03 |                3 |\
+|          4 | Assembly Rooms    |          2 | 1997-09-20 |               21 |\
+|          5 | Festspiel Haus    |          3 | 1995-02-21 |                8 |\
+|          6 | Royal Albert Hall |          7 | 1993-04-12 |                8 |\
+|          7 | Concertgebouw     |          9 | 1993-05-14 |                8 |\
+|          8 | Metropolitan      |          4 | 1997-06-15 |               21 |\
++------------+-------------------+------------+------------+------------------+\
+8 rows in set (0.00 sec)\
+\
+mysql> create table composed (cmpr_no integer,cmpn_no integer);\
+Query OK, 0 rows affected (0.02 sec)\
+\
+mysql> insert into composed values (1,1);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (1,8);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into composed values (2,11);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (3,2);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into composed values (3,13);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (3,14);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (3,18);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (4,12);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (4,20);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (5,3);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (5,13);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into composed values (5,14);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (6,15);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (6,21);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into composed values (7,4);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (7,9);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (8,16);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into composed values (9,5);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (9,10);\
+Query OK, 1 row affected (0.01 sec)\
+\
+mysql> insert into composed values (10,17);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (11,6);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (12,7);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> insert into composed values (12,19);\
+Query OK, 1 row affected (0.00 sec)\
+\
+mysql> select * from composed;\
++---------+---------+\
+| cmpr_no | cmpn_no |\
++---------+---------+\
+|       1 |       1 |\
+|       1 |       8 |\
+|       2 |      11 |\
+|       3 |       2 |\
+|       3 |      13 |\
+|       3 |      14 |\
+|       3 |      18 |\
+|       4 |      12 |\
+|       4 |      20 |\
+|       5 |       3 |\
+|       5 |      13 |\
+|       5 |      14 |\
+|       6 |      15 |\
+|       6 |      21 |\
+|       7 |       4 |\
+|       7 |       9 |\
+|       8 |      16 |\
+|       9 |       5 |\
+|       9 |      10 |\
+|      10 |      17 |\
+|      11 |       6 |\
+|      12 |       7 |\
+|      12 |      19 |\
++---------+---------+\
+23 rows in set (0.00 sec)\
+\
+PROBLEM SET 05 -\
+QUERIES -\
+\
+1. mysql> select m_name from musician join concert on musician.m_no=concert.concert_orgniser where concert_venue='Assembly Rooms' and con_date > '1997-02-01';\
++---------------+\
+| m_name        |\
++---------------+\
+| James Steeple |\
++---------------+\
+1 row in set (0.01 sec)\
+\
+2. mysql> select m_name from performer join musician on performer.perf_is=musician.m_no join place on musician.born_in=place.place_no where performer.instrument in ('guitar','violin') and place.place_country='England';\
++------------------+\
+| m_name           |\
++------------------+\
+| Harry Forte      |\
+| Davis Heavan     |\
+| Alan Fluff       |\
+| Theo Mengel      |\
+| James First      |\
+| Harriet Smithson |\
++------------------+\
+6 rows in set (0.00 sec)\
+\
+3. mysql> select m_name,place_town,con_date from musician join concert on musician.m_no=concert.concert_orgniser join place on concert.concert_in=place.place_no where place.place_country='USA';\
++---------------+------------+------------+\
+| m_name        | place_town | con_date   |\
++---------------+------------+------------+\
+| James Steeple | New York   | 1997-06-15 |\
++---------------+------------+------------+\
+1 row in set (0.00 sec)\
+\
+4. mysql> select con_date,place_town,c_title from band b join performance p join concert c join composition cc join place on b.band_no =p.gave and p.performed_in =c.concert_no and p.performed=cc.c_no and c.concert_in=place.place_no where performed=(select cmpn_no from musician m join composer c join composed cc join composition on m.m_no=c.comp_is and c.comp_no=cc.cmpr_no and cc.cmpr_no=composition.c_no where m_name="andy jones");\
++------------+------------+----------------+\
+| con_date   | place_town | c_title        |\
++------------+------------+----------------+\
+| 1997-06-15 | New York   | A Simple Piece |\
++------------+------------+----------------+\
+1 row in set (0.01 sec)\
+\
+5. mysql> select instrument,avg(cnt)as average from(select distinct(instrument),count(*)as cnt from performer group by instrument)as temp group by instrument; \
++------------+---------+\
+| instrument | average |\
++------------+---------+\
+| violin     |  6.0000 |\
+| viola      |  5.0000 |\
+| banjo      |  1.0000 |\
+| guitar     |  2.0000 |\
+| bass       |  4.0000 |\
+| flute      |  2.0000 |\
+| cornet     |  1.0000 |\
+| drums      |  2.0000 |\
+| cello      |  3.0000 |\
+| trombone   |  1.0000 |\
+| horn       |  1.0000 |\
+| clarinet   |  1.0000 |\
++------------+---------+\
+12 rows in set (0.00 sec)\
+\
+6. mysql> select distinct(m_name),born,instrument from musician m join performer p on m.m_no=p.perf_is where died is null and instrument in(select instrument from musician m join performer p on m.m_no=p.perf_is where m_name like '%theo%'); \
++-------------+------------+------------+\
+| m_name      | born       | instrument |\
++-------------+------------+------------+\
+| Theo Mengel | 1948-08-12 | banjo      |\
+| John Smith  | 1950-03-03 | violin     |\
+| Harry Forte | 1951-02-28 | violin     |\
+| Theo Mengel | 1948-08-12 | violin     |\
+| James First | 1965-06-10 | violin     |\
+| Harry Forte | 1951-02-28 | drums      |\
+| Theo Mengel | 1948-08-12 | drums      |\
++-------------+------------+------------+\
+7 rows in set (0.00 sec)\
+\
+7. mysql> select band_id,count(*)as cnt,band_name from plays_in p join band b on p.band_id=b.band_no group by band_id having cnt> (select avg(cntt) from (select count(*) as cntt from plays_in group by band_id)as temp2);\
++---------+-----+-----------+\
+| band_id | cnt | band_name |\
++---------+-----+-----------+\
+|       1 |   7 | ROP       |\
+|       7 |   6 | Oh well   |\
+|       2 |   7 | AASO      |\
++---------+-----+-----------+\
+3 rows in set (0.00 sec)\
+\
+8. mysql> select m_name as name from concert c join musician m join composer cc join composed ccc join composition cccc on c.concert_orgniser=m.m_no and c.concert_orgniser=cc.comp_is and cc.comp_no=ccc.cmpr_no and ccc.cmpn_no=cccc.c_no where concert_in in (select place_no from place where  place_country in("england","scotland")) and living_in in (select place_no from place where place_country in("england","scotland")) and c_in in (select place_no from place  where place_country in ("england","scotland"));\
+Empty set (0.01 sec)\
+\
+9. mysql> select m_name as name from(select m_name,dense_rank() over(order by count(*) )as rankk from performer p join musician m on p.perf_is=m.m_no group by instrument)as temp where rankk=1;\
++----------------+\
+| name           |\
++----------------+\
+| Theo Mengel    |\
+| Louise Simpson |\
+| Louise Simpson |\
+| Helen Smyth    |\
+| Harry Forte    |\
++----------------+\
+5 rows in set (0.00 sec)\
+\
+10. mysql> select band_name,c_title as title from band b join performance p join composition c on b.band_no =p.gave and p.performed = c.c_no where performed in( select cmpn_no from musician m join composer c join composed cc  on m.m_no=c.comp_is and c.comp_no=cc.cmpr_no  where m_name="sue little");\
++---------------------+--------------------+\
+| band_name           | title              |\
++---------------------+--------------------+\
+| BBSO                | Slow Song          |\
+| The left Overs      | Slow Song          |\
+| Swinging strings    | Slow Song          |\
+| BBSO                | Slow Symphony Blow |\
+| BBSO                | Slow Symphony Blow |\
+| Somebody Loves this | Slow Symphony Blow |\
++---------------------+--------------------+\
+6 rows in set (0.00 sec)\
+\
+11. mysql> select m_name,place_town from musician m join place pp on  m.born_in =pp.place_no where place_no in (select born_in from musician where m_name ="james first") and m_name <>"james first";\
++-------------+------------+\
+| m_name      | place_town |\
++-------------+------------+\
+| Theo Mengel | London     |\
+| Alan Fluff  | London     |\
+| Andy Jones  | London     |\
++-------------+------------+\
+3 rows in set (0.00 sec)\
+\
+12. mysql> select temp1.m_name,instrument_count,composition_count from ((select m_name,born_in,count(*)as instrument_count from musician m \
+    -> join performer p on m.m_no=p.perf_is group by m_no having born_in in(select place_no from place where place_country in ("scotland","england")))as temp1 \
+    -> join (select m_name,born_in,count(*)as composition_count from musician m join composer c join composed cc on m.m_no=c.comp_is and \
+    -> c.comp_no=cc.cmpr_no group by m_no having m.born_in in(select place_no from place where place_country in ("scotland","england"))) as temp2 on temp1.m_name=temp2.m_name);\
++-------------+------------------+-------------------+\
+| m_name      | instrument_count | composition_count |\
++-------------+------------------+-------------------+\
+| James First |                1 |                 4 |\
+| Harry Forte |                3 |                 2 |\
++-------------+------------------+-------------------+\
+2 rows in set (0.00 sec)\
+\
+13. mysql> select band_no,band_name,band_contact,conducted_by from band b join performance p on b.band_no=p.gave where performed_in in (select concert_no from concert  where concert_venue="royal albert hall" order by con_date desc);\
++---------+---------------------+--------------+--------------+\
+| band_no | band_name           | band_contact | conducted_by |\
++---------+---------------------+--------------+--------------+\
+|       6 | Somebody Loves this |            6 |           14 |\
++---------+---------------------+--------------+--------------+\
+1 row in set (0.00 sec)\
+\
+14. mysql> select m_name,case when born_in =(select place_no from place where place_town="glasgow") then "glasgow" else "somewhere else" end as born_in,\
+    ->   case when  living_in=(select place_no from place where place_town="glasgow") then "glasgow" else "somewhere else" end as living_in\
+    ->  ,case when c_in =(select place_no from place where place_town="glasgow") then "glasgow" else "somewhere else" end as c_in\
+    ->   from musician m join composer c join composed cc join composition ccc on m.m_no=c.comp_is and c.comp_no=cc.cmpr_no and cc.cmpn_no=ccc.c_no  \
+    -> where born_in =(select place_no from place where place_town="glasgow") or living_in in (select place_no from place where place_town="glasgow") or c_in \
+    -> in (select place_no from place where place_town="glasgow") group by m_name;\
++-------------+----------------+----------------+----------------+\
+| m_name      | born_in        | living_in      | c_in           |\
++-------------+----------------+----------------+----------------+\
+| Lovely Time | glasgow        | somewhere else | somewhere else |\
+| Jeff Dawn   | somewhere else | glasgow        | glasgow        |\
+| James First | somewhere else | somewhere else | glasgow        |\
+| Phil Hot    | somewhere else | somewhere else | glasgow        |\
+| Andy Jones  | somewhere else | glasgow        | somewhere else |\
+| Rose Spring | somewhere else | somewhere else | glasgow        |\
++-------------+----------------+----------------+----------------+\
+6 rows in set (0.00 sec)\
+\
+15. mysql> select * from ((select player,m_name from plays_in p join musician m on p.player=m.m_no where band_id=(select  band_id from musician  m join plays_in p on m.m_no= p.player where m_name="sue little")) as temp1 join (select player,m_name from plays_in p join musician m  on p.player=m.m_no where band_id=(select  band_id from musician m join plays_in p on m.m_no= p.player where m_name="jeff dawn"))a\
+Empty set (0.00 sec)}
